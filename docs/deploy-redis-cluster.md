@@ -43,6 +43,8 @@ cluster-enabled yes
 cluster-node-timeout 5000
 cluster-config-file /etc/redis/cluster/nodes_30001.conf
 pidfile /var/run/redis_30001.pid
+logfile /etc/redis/cluster/30001.log
+#--requirepass "password" --masterauth "password"
 EOF
 ```
 
@@ -56,6 +58,8 @@ cluster-enabled yes
 cluster-node-timeout 5000
 cluster-config-file /etc/redis/cluster/nodes_30002.conf
 pidfile /var/run/redis_30002.pid
+logfile /etc/redis/cluster/30002.log
+#--requirepass "password" --masterauth "password"
 EOF
 ```
 
