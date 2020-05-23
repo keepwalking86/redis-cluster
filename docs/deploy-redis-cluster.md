@@ -65,6 +65,7 @@ EOF
 
 - Run redis service as systemd
 
+```
 cat >/etc/systemd/system/redis_30001.service<<EOF
 [Unit]
 Description=Redis persistent key-value database
@@ -81,7 +82,9 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
+```
 cat >/etc/systemd/system/redis_30002.service<<EOF
 [Unit]
 Description=Redis persistent key-value database
@@ -98,6 +101,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 ```
 systemctl daemon-reload
@@ -113,6 +117,7 @@ Run command the following to create redis cluster
 
 `redis-cli --cluster create 192.168.10.111:30001 192.168.10.111:30002 192.168.10.112:30001 192.168.10.112:30002 192.168.10.113:30001 192.168.10.113:30002 --cluster-replicas 1`
 
+```
 >>> Performing hash slots allocation on 6 nodes...
 Master[0] -> Slots 0 - 5460
 Master[1] -> Slots 5461 - 10922
@@ -161,3 +166,4 @@ M: d7a9bbb078b9310ccacb9709d92e8246b610f22a 192.168.10.113:30001
 >>> Check for open slots...
 >>> Check slots coverage...
 [OK] All 16384 slots covered.
+```
